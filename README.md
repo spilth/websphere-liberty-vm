@@ -14,6 +14,19 @@
 - `vagrant up`
 - Head to <http://localhost:8080/> and you should see the `Welcome to Liberty` page.
 
+## Installing Admin Center
+
+Following: <https://developer.ibm.com/wasdev/downloads/#asset/features-com.ibm.websphere.appserver.adminCenter-1.0>
+
+- `vagrant ssh`
+- `cd /opt/IBM/liberty/wlp`
+- `sudo bin/installUtility install adminCenter-1.0`
+- `bin/server stop server1`
+- `bin/server start server1`
+
+Go to <http://localhost:8080/adminCenter/>
+
+
 ## To Do
 
 - Learn about WebSphere Liberty
