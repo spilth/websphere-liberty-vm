@@ -1,0 +1,11 @@
+<server description="JSPExamplesServer">
+
+<!-- Enable features -->
+<featureManager>
+  <feature>jsp-2.2</feature>
+  <feature>servlet-3.0</feature>
+</featureManager>
+
+<application id="jsp-examples-war-3.0-M1" name="jsp-examples-war-3.0-M1" location="jsp-examples-war-3.0-M1.war"/>
+
+</server>
