@@ -1,0 +1,3 @@
+[submodule "modules/wlp"]
+	path = modules/wlp
+	url = http://github.com/WASdev/ci.puppet.wlp.git
