@@ -14,24 +14,38 @@
 - `vagrant up`
 - Head to <http://localhost:8080/> and you should see the `Welcome to Liberty` page.
 
-## Installing Admin Center
-
-Following: <https://developer.ibm.com/wasdev/downloads/#asset/features-com.ibm.websphere.appserver.adminCenter-1.0>
+## Adding your own WARs
 
 - `vagrant ssh`
 - `cd /opt/IBM/liberty/wlp`
-- `sudo bin/installUtility install adminCenter-1.0`
-- `bin/server stop server1`
-- `bin/server start server1`
+- Copy your WAR to `servers/server1/apps/`
+- `sudo bin/featureManager install servlet-3.1`
+- Agree to the license
 
-Go to <http://localhost:8080/adminCenter/>
+Now you want to edit `usr/servers/server1/server.xml` and change it's contents to:
 
+    <server>
+            <featureManager>
+                    <feature>servlet-3.1</feature>
+            </featureManager>
+
+            <httpEndpoint id="defaultHttpEndpoint" host="*" httpPort="9080" httpsPort="9443"/>
+
+            <!-- Customize this as needed -->
+            <webApplication contextRoot="demo" location="demo-0.0.1-SNAPSHOT.war" />
+    </server>
+
+Then stop and restart the server:
+
+- `sudo bin/server stop server1`
+- `sudo bin/server start server1`
+
+It might be helpful to start your server with `sudo bin/server run server1` so you can see debug output without having to tail logs.
 
 ## To Do
 
 - Learn about WebSphere Liberty
 - Learn the different between WebSphere Liberty and other WebSphere products
-- Figure out how to enable an admin UI
 - Figure out how to deploy projects to running instance
 
 ## Resources
