@@ -42,6 +42,14 @@ Then stop and restart the server:
 
 It might be helpful to start your server with `sudo bin/server run server1` so you can see debug output without having to tail logs.
 
+### Spring Boot Applications and WebSphere
+
+When deploying a Spring Boot application you will likely get the following error when trying to visit your app:
+
+    Error 404: SRVE0190E: File not found: /
+
+This is a known issue that can be addressed: [Deploying a WAR to Weblogic](http://docs.spring.io/spring-boot/docs/current/reference/html/howto-traditional-deployment.html#howto-weblogic)
+
 ## To Do
 
 - Learn about WebSphere Liberty
@@ -54,4 +62,5 @@ It might be helpful to start your server with `sudo bin/server run server1` so y
 - [Introducing the Puppet module for WebSphere Liberty](https://developer.ibm.com/wasdev/docs/introducing-puppet-module-websphere-liberty/)
 - [was-maven-plugin](https://github.com/orctom/was-maven-plugin)
 - [WebSphere Admin Center](https://developer.ibm.com/wasdev/downloads/#asset/features-com.ibm.websphere.appserver.adminCenter-1.0)
-
+- [http://www.ibm.com/developerworks/websphere/techjournal/0609_alcott/0609_alcott.html](http://www.ibm.com/developerworks/websphere/techjournal/0609_alcott/0609_alcott.html)
+- [Customizing the Liberty profile environment](https://www-01.ibm.com/support/knowledgecenter/was_beta_liberty/com.ibm.websphere.wlp.nd.multiplatform.doc/ae/twlp_admin_customvars.html)
